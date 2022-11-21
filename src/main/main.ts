@@ -385,7 +385,6 @@ ipcMain.on(
             }
           });
         });
-
         // Race the two
         Promise.race([timeout, GCResponse, error]).then((value) => {
           if (value == 'error') {
@@ -536,6 +535,7 @@ async function startEvents(csgo, user) {
       tradeupPayLoad.writeUint64(id);
     }
     await csgo._send(Language.Craft, null, tradeupPayLoad);
+
   });
 
   // Open container
